@@ -57,4 +57,4 @@ async def shutdown(ctx):
 	print("bot is shutdown")
 
 #executes bot
-bot.run("OTM0NjI2MzE5ODMxMDMxODU4.Yey0lw.HLS5Q2C0aIGsNC26qin-yVQpc3M")
+bot.run(DISCORD_TOKEN)
