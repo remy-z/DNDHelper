@@ -6,10 +6,11 @@ from discord.ext import commands
 import os
 from dotenv import load_dotenv
 load_dotenv()
-DISCORD_TOKEN = os.getenv("DISCORD_TOKEN")
+DISCORD_TOKEN = os.getenv("DISCORD_TOKEN") #get bot token stored in env file
 bot = commands.Bot(command_prefix="!") #client object from discord.py
 
 processer = p.Process() #class for processing messages
+
 # event listener for when bot is switched online.
 @bot.event
 async def on_ready():
@@ -52,7 +53,7 @@ async def l(ctx):
 @bot.command()
 @commands.is_owner()
 async def shutdown(ctx):
-	# TODO WRITE OUT USER DATA
+	# TODO WRITE OUT USER DATA TO FILE
 	await ctx.bot.logout()
 	print("bot is shutdown")
 
