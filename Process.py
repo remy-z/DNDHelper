@@ -14,7 +14,8 @@ class Process:
     def process(self, message):
         pass
     
-    # PROCESS ROLL COMMANDS rolls in the format of {number of dice}d{sides}{+/-}{mod}
+    # PROCESS ROLL COMMANDS rolls in the format of {number of dice}d{sides}{+/-}{mod} 
+    # modifier is optional
     def roll(self, message):
         args = message.split()
         rolls = []
@@ -33,7 +34,7 @@ class Process:
                 num, sides = x[0].split("d")
             else:
                 num, sides = arg.split("d")
-            rolls.append(self.action.roll(int(num), int(sides), mod))
+            rolls.append(self.action.roll(int(num), int(sides), mod, arg))
         return self.format.roll(rolls)
 
     #GRAB INFO
