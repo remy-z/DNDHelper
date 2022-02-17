@@ -2,7 +2,7 @@ class Format:
     def __init__(self) -> None:
         pass
 
-    #takes a list of tuples rolls, in the format (roll total, list with all individual rolls and modifer as last argument, intial argument)
+    #takes a list of tuples (roll total, list with all individual rolls and modifer as last argument, intial argument)
     def roll(self, rolls):
         message = ""
         total = 0
