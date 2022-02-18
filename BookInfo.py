@@ -4,7 +4,7 @@ import json
 class BookInfo:
     def __init__(self):
         self.Info = {}
-        spellFile = open("C:/Users/Remy/Documents/startuplyfe/discordbot/DNDHelper/data/book/spells.json", "r", encoding = "utf-8")
+        spellFile = open("data/book/spells.json", "r", encoding = "utf-8")
         self.Info["spells"] = (json.load(spellFile))
 
     def info(self, term):
