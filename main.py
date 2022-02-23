@@ -28,15 +28,15 @@ async def on_message(message):
 		await message.channel.send(sendThis)
 	await bot.process_commands(message)
 
-# shutdown bot and write data to file to reload for next time
+
 @bot.command()
 async def m(ctx, arg):
 	print(ctx)
 
-# roller
+# roll command
 @bot.command()
 async def r(ctx, args):
-	message = processer.roll(ctx.message.content[3:])
+	message = processer.rollCommand(ctx.message.content[3:])
 	await ctx.channel.send(message)
 
 @bot.command()
@@ -47,9 +47,10 @@ async def info(ctx, args):
 
 @bot.command()
 async def l(ctx):
-	#TODO DO WHATEVER THE LAST USERS COMMAND DID 
-	await ctx.channel.send("yoyoyo")
+	PlayerInfo
+	
 
+# shutdown bot and write data to file to reload for next time
 @bot.command()
 @commands.is_owner()
 async def shutdown(ctx):

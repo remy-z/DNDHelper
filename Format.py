@@ -16,6 +16,9 @@ class Format:
         message = f">>> Total: **{total}** \n" + message
         return message
 
+    def macro(self, name, rolls):
+        pass
+
     def info(self, name, info):
         body = ""
         for line in info["entries"]:
