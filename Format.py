@@ -24,3 +24,6 @@ class Format:
         for line in info["entries"]:
             body += line + "\n"
         return f">>> {name} \n {body}"
+    
+    def define(self, word, definition):
+        return f'>>> {word} \n {definition}'

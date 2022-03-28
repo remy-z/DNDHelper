@@ -18,7 +18,7 @@ class Process:
     # modifier is optional
     def rollCommand(self, message):
         args = message.split()
-        rolls = self.action.getRolls()
+        rolls = self.action.getRolls(args)
         return self.format.roll(rolls)
 
     def macroCommand(self, macro):
@@ -27,7 +27,12 @@ class Process:
     # GRAB INFO
     def info(self, arg):
         name = ""
-        spellName = self.book.titleCase(arg)
-        spellInfo = self.book.info(spellName)
+        spellName = arg
+        spellInfo = self.book.info(arg)
         message = self.format.info(spellName, spellInfo)
         return message
+    
+    def define(self, arg):
+        word = arg
+        definition = self.book.define(word)
+        return self.format.define(word, definition)

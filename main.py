@@ -26,12 +26,10 @@ async def on_message(message):
 	if message.content[0] == "/":
 		sendThis = processer.process(message)
 		await message.channel.send(sendThis)
+	if message.content[:1] == "!m":
+		#TODO DO MACRO LIKE THINGS HERE
+		pass
 	await bot.process_commands(message)
-
-
-@bot.command()
-async def m(ctx, arg):
-	print(ctx)
 
 # roll command
 @bot.command()
@@ -41,13 +39,19 @@ async def r(ctx, args):
 
 @bot.command()
 async def info(ctx, args):
-	print(ctx.message.content)
+	# print(ctx.message.content)
 	message = processer.info(ctx.message.content[6:])
 	await ctx.channel.send(message)
 
 @bot.command()
+async def define(ctx, args):
+	message = processer.define(ctx.message.content[8:])
+	await ctx.channel.send(message)
+
+@bot.command()
 async def l(ctx):
-	PlayerInfo
+	#TODO get the last command the user sent and do it?
+	pass
 	
 
 # shutdown bot and write data to file to reload for next time
